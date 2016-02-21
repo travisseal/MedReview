@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="ISO-8859-1">
+    <title>Your MedPrice</title>
+    <link rel="stylesheet" href="//code.jquery.com/ui/1.11.4/themes/smoothness/jquery-ui.css">
+    <script src="//code.jquery.com/jquery-1.10.2.js"></script>
+    <script src="//code.jquery.com/ui/1.11.4/jquery-ui.js"></script>
+    <script src="AutoFiller.js"></script>
+    <link rel="stylesheet"
+          href="//code.jquery.com/ui/1.10.4/themes/smoothness/jquery-ui.css">
+    <!-- User defied css -->
+    <link rel="stylesheet" href="stylesheet.css">
+
+</head>
+<body>
+<br />
+<br />
+
+<form method=POST action="">
+    <div class="gridbox gridmenu">
+        <div class="MainHeader">
+            <h1><center>Price of medical procedures in your area.</center></h1>
+        </div>
+
+        <div class ="background">
+            </br>
+            <div class="user-zip">
+                <div class ="ui-widget">
+                    <input type="Text" id="userZip" name="userZip" class="userZip" value="Enter your zip" onclick="this.value='';">
+                </div>
+            </div>
+            </br>
+            </br>
+            <div class="user-gender">
+                <div class ="ui-widget">
+                    <input type="Text" id="userGender" name="input" class="userGender" value="Your Gender" onclick="this.value='';">
+                </div>
+
+            </div>
+            </br>
+            </br>
+            <div class="facilityHeader">
+
+            </div>
+
+            <div class="facilitySearch-container">
+                <div class="ui-widget">
+                    <input type="text" id="facilitySearch" name="search" class="facilitySearch" value="Your facility" onclick="this.value='';"/>
+                </div>
+            </div>
+            </br>
+            </br>
+            <br />
+            <p><b>**note**</b> for better accuracy it is better to use the diagnosis code</p>
+            <br />
+            <div class="header">
+
+            </div>
+            </br>
+            </br>
+            <div class="diagnosis-container">
+                <div class="ui-widget">
+                    <input type="text" id="diagnosisDesc" name="diagnosisDesc" class="diagnosisDesc" value="Your dignosis description" onclick="this.value='';" />
+                </div>
+            </div>
+
+            <br />
+            <br />
+
+            <h3>OR</h3>
+
+            <br />
+            <br />
+
+            <div class="ICD10-container">
+                <div class="ui-widget">
+                        <input type="text" id="icd10search" name="icd10search" class="icdsearch" value="ICD-10 Code" onclick="this.value='';" />
+                </div>
+            </div>
+            <br />
+            <br />
+
+            <div class="ICD10-container">
+                <div class="ui-widget">
+                    <input type="text" id="price" name="price" class="price" value="How much?" onclick="this.value='';"/>
+                </div>
+            </div>
+            <br />
+
+
+            <div class="submitButton">
+
+                <input type="submit" value="Submit">
+            </div>
+        </div>
+    </div >
+</form>
+</br>
+<br />
+
+</div>
+</body>
+</html>
+
