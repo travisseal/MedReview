@@ -14,8 +14,6 @@ require('../controller/DescriptionSearchController.php');
 
 if(isset($_GET['term']))
 {
-    $controller = new DescriptionSearchController();
-    echo json_encode($controller->getTerm());
+    echo json_encode(DescriptionSearchController::getTerm());
     flush();
-
 }

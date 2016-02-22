@@ -7,9 +7,9 @@
 class DataConnection
 {
 
-    private $database = "medreview";
-    private $errorStatus;
-    private $connection;
+    private static $database = "medreview";
+    private static $errorStatus;
+    private static $connection;
 
     function __construct()
     {
@@ -26,24 +26,21 @@ class DataConnection
      * Output: connection object
      * Assumptions: none
      */
-    function connectDB() {
+    static function connectDB() {
 
         try
         {
             $connection = mysqli_connect("healthdb.czeo9gdzri9u.us-west-2.rds.amazonaws.com","root","masterkey","medreview");
-            $this->connection = $connection;
+           // $connection = $connection;
             if(!$connection)
             {
                 throw new Exception("Connection failed with message: \n ");
             }
 
-
-            $this->selectDB($connection);
-
         }
         catch(Exception $ex)
         {
-            $this->errorStatus = $ex->getMessage();
+            self::$errorStatus = $ex->getMessage();
 
         }
 
@@ -51,14 +48,14 @@ class DataConnection
     }
 
 
-    function selectDB($conn)
+    static function selectDB($conn)
     {
-        mysqli_select_db($conn,$this->database);
+        mysqli_select_db($conn,self::$database);
     }
 
     function close()
     {
-        $this->connection->close();
+        self::$connection->close();
     }
 
     /*
@@ -67,9 +64,9 @@ class DataConnection
      * Output: list of results from the database
      */
 
-    function runQuery($query)
+    static function runQuery($query)
     {
-        $result = $this->_connection->prepare($query);
+        $result = self::$connection->prepare($query);
 
         while($row = mysqli_fetch_row($result))
         {

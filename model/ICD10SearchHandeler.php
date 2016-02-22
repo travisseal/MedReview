@@ -10,9 +10,8 @@ require('../controller/ICD10SearchController.php');
 
 if(isset($_GET['term']))
 {
-    $controller = new ICD10SearchController();
-    $controller->getTerm();
-    echo json_encode($controller->getTerm());
+
+    echo json_encode(ICD10SearchController::getTerm());
     flush();
 
 }

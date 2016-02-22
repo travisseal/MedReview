@@ -1,12 +1,51 @@
-@media screen and (max-width: 480px) {
-   #mainDiv {
+#mainDiv {
+    float: none;
+    width: auto;
+
+}
+#userZip,#userGender,#facilitySearch,#diagnosisDesc,#icd10search,#price
+{
+    width: 50%;
+    border: 2px solid #a1a1a1;
+    padding: 10px 40px;
+    background: orange;
+
+    border-radius: 25px;
+    font-size: x-large;
+}
+#header
+{
+    width:50%;
+    background: slategrey;
+    border: 2px solid red;
+    border-radius: 25px;
+    font-family: cursive;
+}
+@media only screen and (max-width: 460px) {
+    #mainDiv {
         float: none;
         width: auto;
 
     }
-    #header,#userZip,#userGender,#facilitySearch,#diagnosisDesc,#icd10search,#price
+    #userZip,#userGender,#facilitySearch,#diagnosisDesc,#icd10search,#price
     {
-        width: 100%;
+        width: 80%;
+        border: 2px solid #a1a1a1;
+        padding: 10px 40px;
+        background: orange;
+
+        border-radius: 25px;
+        font-size: x-large;
+    }
+    #header
+    {
+        width: 80%;
+        background: lightskyblue;
+        border: 2px solid red;
+        border-radius: 25px;
+        font-family: cursive;
+
     }
 
 }
+

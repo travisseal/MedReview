@@ -4,20 +4,19 @@
  * User: tseal
  * Date: 2/20/16
  * Time: 12:47 AM
+ *
+ * Objective: Handles the database query by using super global
+ * Input: $_GET superglobal
+ * Output: json data with results from the database
+ * Assumptions: The first word in the search is the 'base' word where every word after that high precedence as it relates to the first word
  */
 
 include 'DataConnection.php';
 
 class FacilitiesSearchController
 {
-    private $db_handle;
 
-    function __construct()
-    {
-        $this->db_handle = new DataConnection();
-    }
-
-    public function getTerm()
+    public static function getTerm()
     {
 
         $term = trim(strip_tags($_GET['term']));
@@ -26,7 +25,7 @@ class FacilitiesSearchController
         $a_json_row = array();
 
 
-        if ($data = $this->db_handle->connectDB()->query("select DISTINCT ProviderName from facilities  WHERE facilities.ProviderName like '$term%' ORDER  by ProviderName asc limit 6;")) {
+        if ($data = DataConnection::connectDB()->query("select DISTINCT ProviderName from facilities  WHERE match(ProviderName)  against (+'$term' in boolean mode) limit 6;")) {
             while($row = mysqli_fetch_array($data)) {
                 $firstname = htmlentities(stripslashes($row['ProviderName']));
 
@@ -38,6 +37,6 @@ class FacilitiesSearchController
         }
         return $a_json;
 
-        $this->db_handle->close();
+        DataConnection::close();
     }
 }

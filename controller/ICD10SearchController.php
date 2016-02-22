@@ -16,14 +16,8 @@ include 'DataConnection.php';
 class ICD10SearchController
 {
 
-    private $db_handle;
 
-    function __construct()
-    {
-        $this->db_handle = new DataConnection();
-    }
-
-    public function getTerm()
+    public static function getTerm()
     {
 
         $term = trim(strip_tags($_GET['term']));
@@ -32,7 +26,7 @@ class ICD10SearchController
         $a_json_row = array();
 
 
-        if ($data = $this->db_handle->connectDB()->query("SELECT ICD_CODE FROM icd_10_procedures2 WHERE icd_10_procedures2.ICD_CODE like '$term%' ORDER  by ICD_CODE asc limit 6;")) {
+        if ($data = DataConnection::connectDB()->query("SELECT ICD_CODE FROM icd_10_procedures2 WHERE icd_10_procedures2.ICD_CODE like '$term%' ORDER  by ICD_CODE asc limit 6;")) {
             while($row = mysqli_fetch_array($data)) {
                 $firstname = htmlentities(stripslashes($row['ICD_CODE']));
 
@@ -44,7 +38,7 @@ class ICD10SearchController
         }
         return $a_json;
 
-        $this->db_handle->close();
+        DataConnection::close();
     }
 
 }
