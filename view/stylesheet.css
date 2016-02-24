@@ -13,6 +13,22 @@
     border-radius: 25px;
     font-size: x-large;
 }
+.submitButton
+{
+    background-color: #4CAF50; /* Green */
+    width: 50%;
+    border: none;
+    color: white;
+    padding: 15px 32px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+    margin: 4px 2px;
+    cursor: pointer;
+    -webkit-transition-duration: 0.4s; /* Safari */
+    transition-duration: 0.4s;
+}
 #header
 {
     width:50%;
@@ -46,6 +62,7 @@
         font-family: cursive;
 
     }
+
 
 }
 
