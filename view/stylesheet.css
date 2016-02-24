@@ -38,9 +38,9 @@
     font-family: cursive;
 }
 @media only screen and (max-width: 460px) {
-    #mainDiv {
+    #gridbox-gridmenu {
         float: none;
-        width: auto;
+        width: 100%;
 
     }
     #userZip,#userGender,#facilitySearch,#diagnosisDesc,#icd10search,#price
@@ -55,12 +55,28 @@
     }
     #header
     {
-        width: 80%;
+        width: 100%;
         background: lightskyblue;
         border: 2px solid red;
         border-radius: 25px;
         font-family: cursive;
 
+    }
+    .submitButton
+    {
+        background-color: #4CAF50; /* Green */
+        width: 100%;
+        border: none;
+        color: white;
+        padding: 15px 32px;
+        text-align: center;
+        text-decoration: none;
+        display: inline-block;
+        font-size: 16px;
+        margin: 4px 2px;
+        cursor: pointer;
+        -webkit-transition-duration: 0.4s; /* Safari */
+        transition-duration: 0.4s;
     }
 
 
