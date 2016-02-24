@@ -10,10 +10,12 @@
  */
 
 
-require('../controller/DescriptionSearchController.php');
+require('../model/DiagnosisDescriptionModel.php');
 
 if(isset($_GET['term']))
 {
-    echo json_encode(DescriptionSearchController::getTerm());
+    $controller = new DiagnosisDescriptionModel();
+
+    echo json_encode($controller->getTerm());
     flush();
 }

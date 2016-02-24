@@ -12,7 +12,7 @@ $(function() {
     $("#icd10search").autocomplete({
         source : function(request, response) {
             $.ajax({
-                url : "/Medprice/model/ICD10SearchHandeler.php",
+                url : "/Medprice/controller/ICD10SearchHandler.php",
                 type : "GET",
                 data : {
                     term : request.term
@@ -31,7 +31,7 @@ $(function() {
     $("#diagnosisDesc").autocomplete({
         source : function(request, response) {
             $.ajax({
-                url : "/Medprice/model/DescriptionSearchHandeler.php",
+                url : "/Medprice/controller/DescriptionSearchHandler.php",
                 type : "GET",
                 data : {
                     term : request.term
@@ -48,7 +48,7 @@ $(function() {
     $("#facilitySearch").autocomplete({
         source : function(request, response) {
             $.ajax({
-                url : "/Medprice/model/FacilitiesSearchHandeler.php",
+                url : "/Medprice/controller/FacilitiesSearchHandler.php",
                 type : "GET",
                 data : {
                     term : request.term
@@ -65,7 +65,7 @@ $(function() {
     $("#userZip").autocomplete({
         source : function(request, response) {
             $.ajax({
-                url : "/Medprice/model/ZipcodeHandler.php",
+                url : "/Medprice/controller/ZipcodeHandler.php",
                 type : "GET",
                 data : {
                     term : request.term

@@ -6,12 +6,14 @@
  * Time: 11:47 PM
  */
 
-require('../controller/ICD10SearchController.php');
+require('../model/ICD10ConnectionModel.php');
 
 if(isset($_GET['term']))
 {
 
-    echo json_encode(ICD10SearchController::getTerm());
+    $controller = new ICD10SearchModel();
+
+    echo json_encode($controller->getTerm());
     flush();
 
 }

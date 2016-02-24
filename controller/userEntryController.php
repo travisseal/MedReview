@@ -11,11 +11,11 @@ if($_POST)
 
         //set the properties
 
-        $item->setName($_POST['name']);
-        $item->setCost(intval($_POST['cost']));
-        $item->setMerchant(intval($_POST['merchant']));
-        $item->setReview($_POST['review']);
-        $item->setZip($_POST['zip']);
+        $item->setUserZip($_POST['name']);
+        $item->setGender(intval($_POST['cost']));
+        $item->setICD(intval($_POST['merchant']));
+        $item->setDiagnosis($_POST['review']);
+        $item->setFacility($_POST['zip']);
 
 
         //insert the data

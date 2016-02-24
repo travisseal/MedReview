@@ -10,10 +10,12 @@
  */
 
 
-require('../controller/FacilitiesSearchController.php');
+require('../model/FacilitiesSearchModel.php');
 
 if(isset($_GET['term']))
 {
-    echo json_encode(FacilitiesSearchController::getTerm());
+    $controller = new FacilitiesSearchModel();
+
+    echo json_encode($controller->getTerm());
     flush();
 }
