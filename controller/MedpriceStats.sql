@@ -1,5 +1,7 @@
 use medreview;
-
+/*
+	This script just grabs the most common zip code and the numbers that are associated to the zip only. Its simple, but gets the point accross.
+*/
 
 delimiter //
 
