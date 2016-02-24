@@ -15,10 +15,10 @@ declare mostExpensiveProcedure varchar(500);
 
 set mostCommonZip = (
 					select zipCode
-					from userdata
-					group by zipCode
-					order by sum(zipCode) desc
-					limit 1
+							from userdata
+							group by zipCode
+							order by count(zipCode) desc
+							limit 1
 					);
                     
 set highestPriceForZip = (select max(price) 
@@ -36,3 +36,12 @@ select mostCommonZip, highestPriceForZip, mostExpensiveProcedure;
 
 end //
 delimiter ;
+
+
+call getStats();
+
+
+drop procedure getStats
+
+select *
+from userdata
