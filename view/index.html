@@ -19,71 +19,49 @@
 <br />
 <br />
 
-<form method="post" action="../view/submitform.php">
+<form method="post" action="Medprice/view/submitform.php">
     <div class="gridbox-gridmenu" id="mainDiv">
         <div class="MainHeader" id="header">
             <h1><center>Price of medical procedures in your area</center></h1>
         </div>
 
         <div class ="background">
-            </br>
-            <div class="user-zip">
-                <div class ="ui-widget">
-                    <input type="Text" id="userZip" name="userZip" class="userZip" value="Enter your zip">
-                </div>
-            </div>
-            </br>
-            </br>
-            <div class="user-gender">
-                <div class ="ui-widget">
-                    <input type="Text" id="userGender" name="userGender" class="userGender" value="Your Gender" onclick="this.value='';">
-                </div>
 
-            </div>
             </br>
-            </br>
-            <div class="facilityHeader">
 
-            </div>
+            <textarea class="user-gender" name="userZip" id="userZip" cols="20" rows="1"  onfocus="this.value=''; ">Enter Your Zip</textarea>
 
-            <div class="facilitySearch-container">
-                <div class="ui-widget">
-                    <input type="text" id="facilitySearch" name="facilitySearch" class="facilitySearch" value="Your facility" onclick="this.value='';"/>
-                </div>
-            </div>
             </br>
             </br>
 
-            <div class="header">
+            <textarea class="user-gender" name="userGender" id="userGender" cols="20" rows="1"  onfocus="this.value='';">Gender</textarea>
 
-            </div>
+
             </br>
             </br>
-            <div class="diagnosis-container">
-                <div class="ui-widget">
-                    <input type="text" id="diagnosisDesc" name="diagnosisDesc" class="diagnosisDesc" value="Your dignosis description" onclick="this.value='';" />
-                </div>
-            </div>
 
-            <br />
 
-            <br />
+            <textarea class="facilitySearch-container" name="facilitySearch" id="facilitySearch" cols="20" rows="2"  onfocus="this.value='';">Institution</textarea>
 
-            <div class="ICD10-container">
-                <div class="ui-widget">
-                        <input type="text" id="icd10search" name="icd10search" class="icd10search" value="ICD-10 Code" onclick="this.value='';" />
-                </div>
-            </div>
-            <br />
-            <br />
 
-            <div class="price-container">
-                <div class="ui-widget">
-                    <input type="text" id="price" name="price" class="price" value="How much?" onclick="this.value='';"/>
-                </div>
-            </div>
-            <br />
+            </br>
+            </br>
 
+            <textarea class="diagnosis-container" name="diagnosisDesc" id="diagnosisDesc" cols="40" rows="2" onfocus="this.value='';">Medical Description</textarea>
+
+            </br>
+            </br>
+
+            <textarea class="ICD10-container" name="icd10search" id="icd10search" cols="40" rows="1" onfocus="this.value='';">ICD-10 Code</textarea>
+
+
+            </br>
+            </br>
+
+            <textarea class="price-container" name="price" id="price" cols="40" rows="1" onfocus="this.value='';">How Much?</textarea>
+
+            </br>
+            </br>
 
             <button class = "submitButton" > Submit Info </button>
         </div>
