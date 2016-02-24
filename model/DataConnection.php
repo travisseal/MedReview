@@ -1,6 +1,5 @@
 <?php
 
-//include_once "/Medprice/model/Item.php";
 
 class DataConnection
 {
@@ -40,7 +39,9 @@ class DataConnection
        static $zipCode,$facility, $diagnosisDescription,$diagnosisICDCode,$price;
 
 
-        $connection = mysqli_connect("healthdb.czeo9gdzri9u.us-west-2.rds.amazonaws.com","root","masterkey","medreview");
+
+        $connection = self::connectDB();
+
         $stmt = $connection->prepare("insert into medreview.userdata (zipCode,facility,diagnosisDescription,diagnosisICDCode,price) values(?,?,?,?,?)");
 
 
@@ -54,6 +55,7 @@ class DataConnection
         $price = $item->getPrice();
 
         $stmt->execute();
+        $connection->close();
 
         }
 
