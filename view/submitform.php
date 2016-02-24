@@ -23,19 +23,7 @@ if(isset($_POST['userZip'],$_POST['userGender'],$_POST['facilitySearch'],$_POST[
         $item->setICD($_POST['icd10search']);
         $item->setPrice($_POST['price']);
 
-
-        echo $item->getUserZip();
-        echo $item->getGender();
-        echo $item->getDiagnosis();
-        echo $item->getIcd();
-        echo $item->getPrice();
-
-
-
-        //insert the data
-
-        //DataConnection::insertObject($item);
-
+        DataConnection::insertItem($item);
 
     }
     catch (Exception $ex)
