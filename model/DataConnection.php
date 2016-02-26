@@ -1,6 +1,6 @@
 <?php
 
-require "../view/Results.php";
+
 
 class DataConnection
 {
@@ -57,11 +57,8 @@ class DataConnection
         $stmt->execute();
         $connection->close();
 
-        $results = new Results();
+
 
     }
-
-
-
 
 }
