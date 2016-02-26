@@ -6,6 +6,11 @@ require '../model/Item.php';
  * a new object is created and its properties populated with the data.
  */
 
+
+
+
+DataConnection::getStats();
+
 if(isset($_POST['userZip'],$_POST['userGender'],$_POST['facilitySearch'],$_POST['diagnosisDesc'],$_POST['icd10search'],$_POST['price']))
 {
     try
@@ -23,7 +28,11 @@ if(isset($_POST['userZip'],$_POST['userGender'],$_POST['facilitySearch'],$_POST[
         $item->setICD($_POST['icd10search']);
         $item->setPrice($_POST['price']);
 
-        DataConnection::insertItem($item);
+        //DataConnection::insertItem($item);
+
+        //echo DataConnection::getStats();
+
+        DataConnection::close();
 
     }
     catch (Exception $ex)
