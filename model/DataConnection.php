@@ -57,6 +57,7 @@ class DataConnection
         $stmt->execute();
         $connection->close();
 
+        include '../view/Results.php';
 
 
     }
