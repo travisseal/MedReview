@@ -9,7 +9,7 @@ require '../model/Item.php';
 
 
 
-DataConnection::getStats();
+
 
 if(isset($_POST['userZip'],$_POST['userGender'],$_POST['facilitySearch'],$_POST['diagnosisDesc'],$_POST['icd10search'],$_POST['price']))
 {

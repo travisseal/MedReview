@@ -1,5 +1,6 @@
 <?php
 
+require "../view/Results.php";
 
 class DataConnection
 {
@@ -56,29 +57,11 @@ class DataConnection
         $stmt->execute();
         $connection->close();
 
-    }
-
-    static function getStats()
-    {
-
-        static $return_value;
-
-        $connection = new PDO(self::connectDB());
-
-        $sql = 'CALL getStatus()';
-        $q = $connection->query($sql);
-        $q->setFetchMode(PDO::FETCH_ASSOC);
-
-        while ($results = $q->fetch()) {
-            echo $results['mostCommonZip'];
-        }
-
-
-        $connection->close();
-
-        return $return_value;
+        $results = new Results();
 
     }
+
+
 
 
 }
